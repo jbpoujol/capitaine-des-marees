@@ -1,0 +1,22 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Hauteur de la colonne. Ajustez selon le conteneur. */
+}
+
+.form-label {
+    align-self: flex-start;
+    /* Alignement en haut. */
+}
+
+.form-element {
+    align-self: center;
+    /* Alignement centré horizontalement. */
+    margin-top: auto;
+    /* Pousse l'élément vers le centre verticalement. */
+}
+
+.form-element-expand {
+    flex-grow: 1;
+}

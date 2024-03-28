@@ -1,0 +1,76 @@
+<!-- Dans marees-form.component.html -->
+<form [formGroup]="mareesForm" (ngSubmit)="onSubmit()">
+  <div class="p-fluid grid">
+    <div class="field col-12 md:col-4 flex justify-content-between">
+      <div class="flex flex-column w-full align-items-center">
+        <label for="heureDebut" class="mb-2">Heure de début</label>
+        <p-calendar
+          id="heureDebut"
+          formControlName="heureDebut"
+          [timeOnly]="true"
+          [showTime]="true"
+          dataType="string"
+          [touchUI]="true"
+          styleClass="max-w-10rem"
+          class="m-auto"
+        ></p-calendar>
+      </div>
+      <div class="flex flex-column w-full align-items-center">
+        <label for="hauteurEauDebut" class="mb-2">Hauteur d'eau</label>
+        <p-inputNumber
+          id="hauteurEauDebut"
+          formControlName="hauteurEauDebut"
+          [showButtons]="true"
+          buttonLayout="vertical"
+          [step]="0.1"
+          class="max-w-4rem"
+        ></p-inputNumber>
+      </div>
+    </div>
+    <div class="field col-12 md:col-4 flex justify-content-between">
+      <div class="flex flex-column w-full align-items-center">
+        <label for="heureFin" class="mr-2">Heure de fin</label>
+        <p-calendar
+          id="heureFin"
+          formControlName="heureFin"
+          [timeOnly]="true"
+          [showTime]="true"
+          dataType="string"
+          [touchUI]="true"
+          styleClass="max-w-10rem"
+          class="m-auto"
+        ></p-calendar>
+      </div>
+      <div class="flex flex-column w-full align-items-center">
+        <label for="hauteurEauFin" class="mb-2">Hauteur d'eau</label>
+        <p-inputNumber
+          id="hauteurEauFin"
+          formControlName="hauteurEauFin"
+          [showButtons]="true"
+          buttonLayout="vertical"
+          [step]="0.1"
+          class="max-w-4rem"
+        ></p-inputNumber>
+      </div>
+    </div>
+    <div class="field col-12 md:col-4 flex align-items-center">
+      <label for="heureDemandee" class="mr-2">Heure demandée</label>
+      <p-calendar
+        id="heureDemandee"
+        formControlName="heureDemandee"
+        [timeOnly]="true"
+        [showTime]="true"
+        dataType="string"
+        [touchUI]="true"
+      ></p-calendar>
+    </div>
+    <div class="field col-12 md:col-4">
+      <button
+        type="submit"
+        pButton
+        label="Calculer"
+        [disabled]="!mareesForm.valid"
+      ></button>
+    </div>
+  </div>
+</form>
